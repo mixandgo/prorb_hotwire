@@ -1,2 +1,10 @@
 <h1>Site#second</h1>
 <p>Find me in app/views/site/second.html.erb</p>
+
+<%= turbo_frame_tag "someid" do %>
+  Hello!
+<% end %>
+
+<%= turbo_frame_tag "formid" do %>
+  Something else
+<% end %>
