@@ -1,0 +1,15 @@
+<%= turbo_stream.prepend "people" do %>
+  <tr>
+    <td><%= @name %></td>
+    <td><%= @email %></td>
+    <td><%= @age %></td>
+  </tr>
+<% end %>
+
+<%= turbo_stream.update "hidden-counter" do %>
+  <%= hidden_field_tag :count, nil, id: "hidden-counter", value: @count %>
+<% end %>
+
+<%= turbo_stream.update "counter" do %>
+  <%= @count %>
+<% end %>
