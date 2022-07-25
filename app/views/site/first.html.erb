@@ -1,48 +1,10 @@
 <h1>Site#first</h1>
 <p>Find me in app/views/site/first.html.erb</p>
 
-<%= turbo_stream_from "teststr" %>
+<div id="someid" data-controller="test" data-test-myelement-class="bg-black mt-4"
+      data-test-name-value="John" data-test-age-value="25">
+  <input type="text" data-test-target="text" />
+  <button data-action="click->test#hello">Click Me!</button>
+</div>
 
-<div id="broadcasts"></div>
-<br />
-<hr />
-Total: <span class="counter"><%= @count %></span>
-
-<table width="400">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Age</th>
-    </tr>
-  </thead>
-  <tbody id="people">
-    <tr>
-      <td>John</td>
-      <td>jdoe@email.com</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <td>Emily</td>
-      <td>emily@email.com</td>
-      <td>43</td>
-    </tr>
-    <tr>
-      <td>Dan</td>
-      <td>dan@email.com</td>
-      <td>78</td>
-    </tr>
-  </tbody>
-</table>
-
-<%= form_with url: third_page_path, scope: "person" do |f| %>
-  <%= hidden_field_tag :count, nil, id: "hidden-counter", value: @count %>
-  <%= f.text_field :name, placeholder: "Name" %>
-  <%= f.text_field :email, placeholder: "Email" %>
-  <%= f.text_field :age, placeholder: "Age" %>
-  <%= f.submit :save %>
-<% end %>
-
-<hr />
-Total: <span class="counter"><%= @count %></span>
-
+<%= link_to "Second", second_page_path %>
